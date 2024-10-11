@@ -13,7 +13,7 @@ Os arquivos se encontram na branch: Atividade_01
 ```
 git clone https://github.com/Bealvs/Codigos-Trilha-de-aprendizado-Compass.git
 ```
-- Digitar:
+- Após realizar o passo anterior, abra os arquivos clonados no terminal e digite:
 
 ```
 git checkout Atividade_01
