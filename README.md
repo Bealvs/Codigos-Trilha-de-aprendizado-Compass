@@ -50,8 +50,11 @@ Existem as seguintes classes:
 - :money_with_wings: Transação
   - É composta pelo(a):
     - Remetente
+      
     - Moeda
-    - Valor (no sentido de quantidade) 
+      
+    - Valor (no sentido de quantidade)
+      
     - Destinatário.
 
   - Essas informações podem ser inseridas da seguinte forma:
