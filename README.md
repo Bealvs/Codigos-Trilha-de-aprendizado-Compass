@@ -34,13 +34,12 @@ node .\Atividade.js
 Existem as seguintes classes:
 - :black_square_button: Bloco
   - Apresenta a estrutura básica que é composta por: 
-    - Índice 
-    - Nonce
-    - Data de criação
-    - Hash do bloco anterior
-    - Hash
-    - Dados
-    
+    - Índice: Identificação do bloco na cadeia. 
+    - Nonce: Número utilizado para realizar a mineração e encontrar um hash válido para que o bloco seja inserido na cadeia.
+    - Data de criação: Em que momento o bloco foi criado.
+    - Hash do bloco anterior: São informações criptografadas que são baseadas nas demais estruturas mencionadas, mas neste caso, do bloco anterior. 
+    - Hash: São informações criptografadas que são baseadas nas demais estruturas mencionadas, mas neste caso, do atual bloco.
+    - Dados:
       - Neste caso o foco seriam as transações, mas também é possível colocar da seguinte forma:
         
       ```
