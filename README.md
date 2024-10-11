@@ -1,6 +1,8 @@
 # Atividade individual - Implementação da Blockchain 
 O objetivo da atividade é desenvolver uma "rede blockchain" com funcionalidades básicas. O projeto foi desenvolvido em Javascript e consiste numa blockchain simples que permite a criação de transações, que são colocadas nos blocos e estes são colocados na rede. Trata-se de uma atividade individual proposta durante o programa de bolsas de Blockchain da empresa Compass UOL.
 
+Os arquivos se encontram na: Atividade_01
+
 ## É necessário ter: 
 
 :triangular_flag_on_post: [Node.js](https://nodejs.org/en/download/package-manager/current)
@@ -11,6 +13,12 @@ O objetivo da atividade é desenvolver uma "rede blockchain" com funcionalidades
 ```
 git clone https://github.com/Bealvs/Codigos-Trilha-de-aprendizado-Compass.git
 ```
+- Digitar:
+
+```
+git checkout Atividade_01
+```
+
 - Depois deve-se digitar no terminal:
 ```
 npm install
