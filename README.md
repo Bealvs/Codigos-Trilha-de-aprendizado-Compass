@@ -23,6 +23,10 @@ git checkout Atividade_01
 ```
 npm install
 ```
+- Caso apareça um erro, digite:
+```
+npm install crypto-js date-fns
+```
 - Exitem duas bibliotecas que serão instaladas:
   - crypto-js
     - Usada para auxiliar nos cálculos do hash.
