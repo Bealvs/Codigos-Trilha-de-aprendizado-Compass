@@ -2,6 +2,7 @@
   "dependencies": {
     "crypto": "^1.0.1",
     "crypto-js": "^4.2.0",
-    "date-fns": "^4.1.0"
+    "date-fns": "^4.1.0",
+    "elliptic": "^6.6.0"
   }
 }
