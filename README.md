@@ -1,7 +1,7 @@
 # Atividade individual - Implementação da Blockchain 
-O objetivo da atividade é desenvolver uma "rede blockchain" com funcionalidades básicas. O projeto foi desenvolvido em Javascript e consiste numa blockchain simples que permite a criação de transações, que são colocadas nos blocos e estes são colocados na rede. Trata-se de uma atividade individual proposta durante o programa de bolsas de Blockchain da empresa Compass UOL.
+O objetivo da atividade é desenvolver uma "rede blockchain" com funcionalidades básicas e a dição de recursos. O projeto foi desenvolvido em Javascript e consiste numa blockchain simples que permite a criação de transações, que são colocadas nos blocos e estes são colocados na rede. Trata-se de uma atividade individual proposta durante o programa de bolsas de Blockchain da empresa Compass UOL.
 
-Os arquivos se encontram na branch: Atividade_01
+Os arquivos se encontram na branch: Atividade_02
 
 ## É necessário ter: 
 
@@ -25,13 +25,15 @@ npm install
 ```
 - Caso apareça um erro, digite:
 ```
-npm install crypto-js date-fns
+npm install crypto-js date-fns elliptic
 ```
 - Exitem duas bibliotecas que serão instaladas:
   - crypto-js
     - Usada para auxiliar nos cálculos do hash.
   - date-fns
     - Usada para deixar as datas personalizadas, ou seja, esteticamente mais bonitas.
+  - elliptic
+    - Gera e valida chaves de curva elíptica. Neste caso, a curva secp256k1 para criar pares de chaves.
 - Após isso, basta executar o arquivo através do comando:
 
 ```
@@ -52,10 +54,10 @@ Existem as seguintes classes:
     - Hash do bloco anterior: São informações criptografadas que são baseadas nas demais estruturas mencionadas, mas neste caso, do bloco anterior. 
     - Hash: São informações criptografadas que são baseadas nas demais estruturas mencionadas, mas neste caso, do atual bloco.
     - Dados:
-      - Neste caso o foco seriam as transações, mas também é possível colocar da seguinte forma:
+      - Neste caso o foco seriam as transações. Um exemplo de como criar uma transação inválida:
         
       ```
-      blockchain.mineracao("Informações...");
+      blockchain.mineracao([new Transacao("Usuário-Inválido", 10, "Bitcoins", usuario2)])
       ```
     
 - :money_with_wings: Transação
@@ -71,15 +73,14 @@ Existem as seguintes classes:
   - Essas informações podem ser inseridas da seguinte forma:
   
   ```
-  blockchain.mineracao(new Transacao("Geisy", 10, "Bitcoins", "Gabriel"));
+  blockchain.mineracao([new Transacao(usuario1, 10, "Bitcoins", usuario2)])
   ```
   
   - Também podem ser inseridas mais de uma transação:
   
   ```
-  blockchain.mineracao([new Transacao("Gabriel", 9, "Bitcoins", "Geisy"),
-  new Transacao("Gabriel", 34, "Bitcoins", "Juliana"),
-  new Transacao("Guilherme", 12, "Bitcoins", "Thuli")]);
+  blockchain.mineracao([new Transacao(usuario2, 15, "Bitcoins", usuario3), 
+  new Transacao(usuario2, 12, "Bitcoins", usuario1)])
   ```
     
 - :chains: Blockchain 
@@ -88,12 +89,18 @@ Existem as seguintes classes:
     
     - UltimoBloco (): Retorna o último bloco da cadeia.
     
-    - mineracao (transacao): Vai realizar a mineração até encontrar um hash que satisfaça a dificuldade previamente estabelecida. Possui como parâmetro a transação que é necessária para o cáculo da hash.
-    
+    - mineracao (transacoes): Vai realizar a mineração até encontrar um hash que satisfaça a dificuldade previamente estabelecida. Possui como parâmetro as transacoes que são necessárias para o cáculo da hash.
+
+    - validandoEndereco (endereco): Método que verifica se um endereço é válido e, portanto, impede transações com endereços incorretos.    
+
     - validandoHash (hash, dificuldade): Este método percorre a string do hash com base na dificuldade passada como parâmetro, através de um laço *for*. Mas antes, deve ser feita a verificação se o hash é nulo ou indefinido.
       
     - validandoBloco (): Através de um laço que verifica bloco por bloco, é feita a análise caso o hash do bloco anterior não coincida com o hash do bloco anterior que se encontra no bloco atual ou o hash do bloco atual não coincida com o que foi calculado.
 
-- :round_pushpin: Há por fora das classes, a função calcularHash (index, nonce, data, hashBlocoAnterior, transacao): Seu papel é exatamente este, calcular o hash com base nos parâmetros.
+    - adicionandoRegistro (transacao): Registra as transações tanto para o remetente quanto para o destinatário e as coloca em um histórico de todas as transações feitas através de cada endereço.
+
+    - mostraRegistroEndereco(endereco): Mostra o registro das transações de cada endereço específico.
+
+- :round_pushpin: Há por fora das classes, a função calcularHash (index, nonce, data, hashBlocoAnterior, transacao): Seu papel é exatamente este, calcular o hash com base nos parâmetros. E a função gerarChave () que neste caso criaria as chaves usando o critério estabelecido (começar com "x" e ter tamanho específico).
   
 Caso surja alguma dúvida, por favor submeta uma nova *Issue*.
