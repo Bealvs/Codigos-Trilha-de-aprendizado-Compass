@@ -27,7 +27,7 @@ npm install
 ```
 npm install crypto-js date-fns elliptic
 ```
-- Exitem duas bibliotecas que serão instaladas:
+- Exitem bibliotecas que serão instaladas:
   - crypto-js
     - Usada para auxiliar nos cálculos do hash.
   - date-fns
