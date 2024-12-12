@@ -40,9 +40,12 @@ npm install crypto-js date-fns readline elliptic
 - Após isso, basta executar o arquivo através do comando:
 
 ```
-node .\Atividade.js
+npm run start
 ```
-- OBS.: A fim de facilitar, utilize o comando `node` e vá apertando *TAB* até aparecer.
+ou
+```
+node .\src\Atividade.js
+```
 
 ---
 
