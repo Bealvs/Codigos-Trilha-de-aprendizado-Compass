@@ -1,1 +1,14 @@
-{"type":"module","dependencies":{"crypto":"^1.0.1","crypto-js":"^4.2.0","date-fns":"^4.1.0","elliptic":"^6.6.1","js-crypto-ec":"^1.0.7","readline":"^1.3.0"}}
+{   
+    "scripts": {
+        "start": "node ./src/Atividade.js"
+    },
+    "type":"module",
+    "dependencies":{
+        "crypto":"^1.0.1",
+        "crypto-js":"^4.2.0",
+        "date-fns":"^4.1.0",
+        "elliptic":"^6.6.1",
+        "js-crypto-ec":"^1.0.7",
+        "readline":"^1.3.0"
+    }
+}
